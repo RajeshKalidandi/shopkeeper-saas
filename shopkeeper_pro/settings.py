@@ -75,7 +75,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'shopkeeper_db',
         'USER': 'postgres',
-        'PASSWORD': 'Rajesh@2847',
+        'PASSWORD': 'your-password',
         'HOST': 'localhost',
         'PORT': '5432',
     }
