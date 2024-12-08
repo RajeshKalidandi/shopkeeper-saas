@@ -1,145 +1,113 @@
-# ShopKeeper Pro - All-in-One Business Management Suite
+# ShopKeeper Pro - SaaS Application
 
-Empower local shopkeepers in India to streamline their business operations, reduce manual errors, and increase profitability.
+A modern SaaS application designed to help local shopkeepers in India manage their business operations efficiently.
 
-## Features
+## Project Status
 
-### Implemented
-- Custom User Authentication
-  - Email-based authentication
-  - Shop profile management
-  - Subscription management
+**Current Status**: Initial Development Phase
+**Last Updated**: December 8, 2024
 
-- Inventory Management
-  - Product categories
-  - Product information with SKU and barcode
-  - Stock tracking with transaction history
-  - Low stock alerts
+### Completed Features
 
-- Billing System
-  - Invoice generation
-  - Multiple payment methods (Cash, UPI, Card, Store Credit)
-  - Invoice items with tax and discount
-  - Payment tracking
+#### Authentication System
+- Modern login and registration pages with responsive design
+- Form validation and error handling
+- Session-based authentication with CSRF protection
+- Protected routes and middleware implementation
 
-- Customer Relationship Management (CRM)
-  - Customer database
-  - Interaction tracking
-  - Loyalty program
-  - Follow-up management
+#### Dashboard Layout
+- Responsive sidebar navigation
+- Modern dashboard shell with animations
+- Stats cards with glassmorphism effects
+- Mobile-friendly design
 
-### Upcoming Features
-- Dashboard Analytics
-- Supplier Management
-- Financial Reports
-- SMS/Email Notifications
-- Mobile App
-- Multi-language Support
-- Offline Mode
-- Data Backup
+### Tech Stack
 
-## Tech Stack
-- **Backend**: Django 5.0
-- **Database**: PostgreSQL
-- **API**: Django REST Framework
-- **Frontend** (Coming Soon): React.js
-- **Payment Gateway**: Stripe (with UPI integration)
-- **AI Features**: TensorFlow for predictive analytics
+#### Frontend
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Shadcn UI Components
+- React Query for data fetching
+- Axios for API communication
 
-## Project Structure
+#### Backend
+- Django 4.2
+- Django REST Framework
+- PostgreSQL
+- Django CORS headers
+
+### Project Structure
+
 ```
 shopkeeper-saas/
-├── accounts/          # User authentication and shop profiles
-├── inventory/         # Product and stock management
-├── billing/          # Invoice and payment processing
-├── crm/              # Customer relationship management
-└── shopkeeper_pro/   # Project settings and configuration
+├── frontend/               # Next.js frontend application
+│   ├── src/
+│   │   ├── app/           # Next.js app router pages
+│   │   ├── components/    # Reusable React components
+│   │   ├── lib/          # Utility functions and configurations
+│   │   └── styles/       # Global styles
+│   └── public/           # Static assets
+│
+├── accounts/             # Django user authentication app
+├── inventory/           # Inventory management app
+├── billing/            # Billing and invoicing app
+└── crm/               # Customer relationship management app
 ```
 
-## Database Schema
-- **Accounts**
-  - CustomUser
-  - ShopProfile
+### Setup Instructions
 
-- **Inventory**
-  - Category
-  - Product
-  - Stock
-
-- **Billing**
-  - Invoice
-  - InvoiceItem
-  - Payment
-
-- **CRM**
-  - Customer
-  - CustomerInteraction
-  - Loyalty
-
-## Setup Instructions
-
-### Prerequisites
-- Python 3.10+
-- PostgreSQL 17+
-- Node.js 18+ (for frontend - coming soon)
-
-### Installation
 1. Clone the repository
 ```bash
-git clone https://github.com/RajeshKalidandi/shopkeeper-saas.git
+git clone [repository-url]
 cd shopkeeper-saas
 ```
 
-2. Create and activate virtual environment
+2. Backend Setup
 ```bash
+# Create and activate virtual environment
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# OR
-venv\Scripts\activate     # Windows
-```
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-3. Install dependencies
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-4. Configure environment variables
-Create a `.env` file in the root directory with:
-```
-DEBUG=True
-SECRET_KEY=your_secret_key
-DATABASE_URL=postgresql://user:password@localhost:5432/shopkeeper_db
-STRIPE_SECRET_KEY=your_stripe_key
-```
-
-5. Run migrations
-```bash
+# Run migrations
 python manage.py migrate
+
+# Start development server
+python manage.py runserver 8080
 ```
 
-6. Create superuser
+3. Frontend Setup
 ```bash
-python manage.py createsuperuser
+cd frontend
+npm install
+npm run dev
 ```
 
-7. Run development server
-```bash
-python manage.py runserver
-```
+The application will be available at:
+- Frontend: http://localhost:3001
+- Backend API: http://localhost:8080
 
-## API Documentation
-- Swagger UI: `/swagger/`
-- ReDoc: `/redoc/`
+### Next Steps
 
-## Contributing
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Implement core business features:
+   - Inventory management system
+   - Billing and invoicing
+   - Customer management
+   - Reports and analytics
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+2. Add additional features:
+   - Multi-language support
+   - Dark mode
+   - Mobile app
+   - Offline support
 
-## Contact
-Rajesh Kalidandi - [GitHub](https://github.com/RajeshKalidandi)
+### Contributing
+
+This project is currently in development. Feel free to submit issues and pull requests.
+
+### License
+
+[MIT License](LICENSE)
